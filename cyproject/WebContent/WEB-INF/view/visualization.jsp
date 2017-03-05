@@ -2,93 +2,102 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">  
-    <title>Visual Admin Dashboard - Data Visualization</title>
-    <meta name="description" content="">
-    <meta name="author" content="templatemo">
-     <%@include file="common/common.jsp" %>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visual Admin Dashboard - Data Visualization</title>
+<meta name="description" content="">
+<meta name="author" content="templatemo">
+<%@include file="common/common.jsp"%>
 
-  </head>
-  <body>  
-    <!-- Left column -->
-   <%@include file="common/menu.jsp"%>s
-      <!-- Main content --> 
-      <div class="templatemo-content col-1 light-gray-bg">
-        <div class="templatemo-top-nav-container">
-          <div class="row">
-            <nav class="templatemo-top-nav col-lg-12 col-md-12">
-              <ul class="text-uppercase">
-                <li><a href="" class="active">Admin panel</a></li>
-                <li><a href="">Dashboard</a></li>
-                <li><a href="">Overview</a></li>
-                <li><a href="login.html">Sign in form</a></li>
-              </ul>  
-            </nav> 
-          </div>
-        </div>
-        <div class="templatemo-content-container">         
-          <div class="templatemo-content-widget white-bg">
-            <h2 class="margin-bottom-10">Data Visualization</h2>
-            <p>Credit goes to <a href="https://google-developers.appspot.com/chart/" target="_parent">Google Charts</a></p>
-            <div class="panel panel-default no-border">
-              <div class="panel-heading border-radius-10">
-                <h2>Gauge</h2>
-              </div>
-              <div class="panel-body">
-                <div class="templatemo-flex-row flex-content-row margin-bottom-30">
-                  <div class="col-1">
-                    <div id="gauge_div" class="templatemo-chart"></div>
-                    <h3 class="text-center margin-bottom-5">Computer Resources</h3>
-                    <p class="text-center">Curabitur</p>              
-                  </div>              
-                </div>     
-              </div>
-            </div>            
-            <div class="panel panel-default no-border">
-              <div class="panel-heading border-radius-10">
-                <h2>Timeline</h2>
-              </div>
-              <div class="panel-body">
-                <div class="templatemo-flex-row flex-content-row">
-                  <div class="col-1">
-                    <div id="timeline_div" class="templatemo-chart"></div>
-                    <h3 class="text-center margin-bottom-5">Conference Schedule</h3>
-                    <p class="text-center">Lorem Ipsum</p>                
-                  </div>              
-                </div>
-              </div> 
-            </div>
-            <div class="panel panel-default no-border">
-              <div class="panel-heading border-radius-10">
-                <h2>Area Chart</h2>
-              </div>
-              <div class="panel-body">
-                <div class="templatemo-flex-row flex-content-row">
-                  <div class="col-1">
-                    <div id="area_chart_div" class="templatemo-chart"></div>
-                    <h3 class="text-center margin-bottom-5">Company Performance</h3>
-                    <p class="text-center">Fusce mi lacus</p>                
-                  </div>              
-                </div>
-              </div> 
-            </div>
-          </div>
-          <footer class="text-right">
-            <p>Copyright &copy; 2084 Company Name 
-            | Designed by <a href="http://www.templatemo.com" target="_parent">templatemo</a></p>
-          </footer>         
-        </div>
-      </div>
-    </div>
-    
-    <!-- JS -->
-    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>      <!-- jQuery -->
-    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script> <!--  jQuery Migrate Plugin -->
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script> <!-- Google Chart -->
-    <script>
+</head>
+<body>
+	<!-- Left column -->
+	<%@include file="common/menu.jsp"%>s
+	<!-- Main content -->
+	<div class="templatemo-content col-1 light-gray-bg">
+		<div class="templatemo-top-nav-container">
+			<div class="row">
+				<nav class="templatemo-top-nav col-lg-12 col-md-12">
+					<ul class="text-uppercase">
+						<li><a href="" class="active">Admin panel</a></li>
+						<li><a href="">Dashboard</a></li>
+						<li><a href="">Overview</a></li>
+						<li><a href="login.html">Sign in form</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<div class="templatemo-content-container">
+			<div class="templatemo-content-widget white-bg">
+				<h2 class="margin-bottom-10">Data Visualization</h2>
+				<p>
+					Credit goes to <a
+						href="https://google-developers.appspot.com/chart/"
+						target="_parent">Google Charts</a>
+				</p>
+				<div class="panel panel-default no-border">
+					<div class="panel-heading border-radius-10">
+						<h2>Gauge</h2>
+					</div>
+					<div class="panel-body">
+						<div class="templatemo-flex-row flex-content-row margin-bottom-30">
+							<div class="col-1">
+								<div id="gauge_div" class="templatemo-chart"></div>
+								<h3 class="text-center margin-bottom-5">Computer Resources</h3>
+								<p class="text-center">Curabitur</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default no-border">
+					<div class="panel-heading border-radius-10">
+						<h2>Timeline</h2>
+					</div>
+					<div class="panel-body">
+						<div class="templatemo-flex-row flex-content-row">
+							<div class="col-1">
+								<div id="timeline_div" class="templatemo-chart"></div>
+								<h3 class="text-center margin-bottom-5">Conference Schedule</h3>
+								<p class="text-center">Lorem Ipsum</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default no-border">
+					<div class="panel-heading border-radius-10">
+						<h2>Area Chart</h2>
+					</div>
+					<div class="panel-body">
+						<div class="templatemo-flex-row flex-content-row">
+							<div class="col-1">
+								<div id="area_chart_div" class="templatemo-chart"></div>
+								<h3 class="text-center margin-bottom-5">Company Performance</h3>
+								<p class="text-center">Fusce mi lacus</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="text-right">
+				<p>
+					Copyright &copy; 2084 Company Name | Designed by <a
+						href="http://www.templatemo.com" target="_parent">templatemo</a>
+				</p>
+			</footer>
+		</div>
+	</div>
+	</div>
+
+	<!-- JS -->
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<!-- jQuery -->
+	<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+	<!--  jQuery Migrate Plugin -->
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<!-- Google Chart -->
+	<script>
 
       var gaugeChart;
       var gaugeData;
@@ -217,6 +226,8 @@
       }
 
     </script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/public/js/templatemo-script.js"></script>      <!-- Templatemo Script -->
-  </body>
+	<script type="text/javascript"
+		src="${pageContext.request.contextPath}/public/js/templatemo-script.js"></script>
+	<!-- Templatemo Script -->
+</body>
 </html>
