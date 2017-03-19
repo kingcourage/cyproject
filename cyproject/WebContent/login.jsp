@@ -26,7 +26,7 @@
 	<div class="templatemo-content-widget templatemo-login-widget white-bg">
 		<header class="text-center">
 			<div class="square"></div>
-			<h1>Visual Admin</h1>
+			<h1>cy-admin</h1>
 		</header>
 		<form action="${pageContext.request.contextPath}/admin/login"
 			id="theform" class="templatemo-login-form">
@@ -69,24 +69,19 @@
 		</p>
 	</div>
 	<script type="text/javascript">
-			function register(){
-				$.ajax({
-					type:"post",
-					url:"${pageContext.request.contextPath}/admin/login",
-					data: $("#theform").serialize(),
-					dataType : "json",
-					success: function(result){
-						alert(result);
-						if(result==1){
-							alert("aa");
-							window.location.href="${pageContext.request.contextPath}/admin/index"
-						}else{
-							return;
+		function register() {
+			$
+					.ajax({
+						type : "post",
+						url : "${pageContext.request.contextPath}/admin/login",
+						data : $("#theform").serialize(),
+						dataType : "json",
+						success : function(result) {
+							window.location.href = "${pageContext.request.contextPath}/admin/index"
 						}
-					}
-					
-				});
-			}
-		</script>
+
+					});
+		}
+	</script>
 </body>
 </html>

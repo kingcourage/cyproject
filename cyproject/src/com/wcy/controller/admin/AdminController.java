@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.wcy.pojo.Admin;
 import com.wcy.service.admin.AdminService;
@@ -34,7 +35,6 @@ public class AdminController {
 				HttpSession session = request.getSession();
 				session.setAttribute("admin",ad);
 				model.addAttribute("ad", ad);
-				out.print(1);
 			}else{
 				out.print(0);
 			}
@@ -52,10 +52,10 @@ public class AdminController {
 	}
 	
 	@RequestMapping("/register")
-	public String Register(Admin admin,HttpServletRequest request){
+	public ModelAndView Register(Admin admin,HttpServletRequest request){
 		Admin ad = adminService.register(admin);
 		request.setAttribute("admin", ad);
-		return "index";
+		return new ModelAndView("index","admin",ad);
 	}
 	
 	@RequestMapping("/deleteAdmin")
@@ -84,7 +84,7 @@ public class AdminController {
 
 	@RequestMapping("/manageusers")
 	public String Manageusers(Admin admin,HttpServletRequest request){
-		return "manageusers";
+		return "system/menu";
 	}
 	
 	@ResponseBody
