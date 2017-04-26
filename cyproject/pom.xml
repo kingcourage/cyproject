@@ -6,10 +6,10 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<build>
-		<sourceDirectory>src</sourceDirectory>
+		<sourceDirectory>src/main/java</sourceDirectory>
 		<resources>
 			<resource>
-				<directory>src</directory>
+				<directory>src/main/java</directory>
 				<excludes>
 					<exclude>**/*.java</exclude>
 				</excludes>
@@ -32,6 +32,20 @@
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
+			
+			<!-- geelynote maven的核心插件之-complier插件默认只支持编译Java 1.4，因此需要加上支持高版本jre的配置，在pom.xml里面加上 增加编译插件 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+          <encoding>UTF-8</encoding>
+          <compilerArguments>
+            <extdirs>${project.basedir}/WebContent/WEB-INF/lib</extdirs>
+          </compilerArguments>
+        </configuration>
+      </plugin>
 		</plugins>
 	</build>
 	<properties>
@@ -131,19 +145,6 @@
 			<version>1.2.17</version>
 		</dependency>
 
-		<!-- servlet -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>3.0-alpha-1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-		</dependency>
-
 		<!-- json -->
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
@@ -204,5 +205,26 @@
 			<artifactId>commons-fileupload</artifactId>
 			<version>1.2.2</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.5</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+		</dependency>
 	</dependencies>
+	  
 </project>
