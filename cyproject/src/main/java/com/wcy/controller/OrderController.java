@@ -270,4 +270,17 @@ public class OrderController extends BaseController {
 
 		return "shop/pay";
 	}
+	
+	
+	@RequestMapping("/system/index")
+	public String  orderIndex(){
+		return "system/order";
+	}
+	
+	@RequestMapping("/system/getAllOrder")
+	@ResponseBody
+	public List<Order> getAllOrder(){
+		return orderService.getAllOrder();
+		
+	}
 }

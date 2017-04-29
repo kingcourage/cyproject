@@ -1,6 +1,7 @@
 package com.wcy.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -67,5 +68,21 @@ public class UserController extends BaseController{
 			result.setMsg("fail");
 		}
 		return result;
+	}
+	
+	
+	/**
+	 * 后台用户管理界面
+	 * @return
+	 */
+	@RequestMapping("/system/index")
+	public String userIndex(){
+		return "system/user";
+	}
+	
+	@RequestMapping("/system/getAllUser")
+	@ResponseBody
+	public List<User> getAllUser(){
+		return userService.getAllUser();
 	}
 }

@@ -1,5 +1,7 @@
 package com.wcy.service;
 
+import java.util.List;
+
 import com.wcy.pojo.User;
 
 public interface UserService {
@@ -16,5 +18,10 @@ public interface UserService {
 	 * @time 2017年4月20日下午9:14:46
 	 */
 	public User login(String username,String password) throws Exception;
+	
+	/**
+	 * 得到所有的用户信息
+	 */
+	public List<User> getAllUser();
 	
 }

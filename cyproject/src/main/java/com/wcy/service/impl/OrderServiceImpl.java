@@ -45,4 +45,10 @@ public class OrderServiceImpl implements OrderService{
 		return orderMapper.selectByUserIdAndOrderNo(userId, orderNo);
 	}
 
+	@Override
+	public List<Order> getAllOrder() {
+		// TODO Auto-generated method stub
+		return orderMapper.selectAllOrder();
+	}
+
 }

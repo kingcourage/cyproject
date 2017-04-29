@@ -1,6 +1,8 @@
 package com.wcy.service.impl;
 
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -29,7 +31,11 @@ public class UserServiceImpl implements UserService{
 		// TODO Auto-generated method stub
 		return userMapper.selectLogin(username, password);
 	}
-	
-	
+
+	@Override
+	public List<User> getAllUser() {
+		// TODO Auto-generated method stub
+		return userMapper.getAllUser();	
+	}
 	
 }

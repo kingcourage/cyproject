@@ -1,5 +1,7 @@
 package com.wcy.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 import com.wcy.pojo.User;
@@ -32,4 +34,6 @@ public interface UserMapper {
     int checkPassword(@Param(value="password")String password,@Param("userId")Integer userId);
 
     int checkEmailByUserId(@Param(value="email")String email,@Param(value="userId")Integer userId);
+
+	List<User> getAllUser();
 }
