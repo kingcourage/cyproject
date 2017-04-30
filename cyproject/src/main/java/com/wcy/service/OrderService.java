@@ -20,4 +20,11 @@ public interface OrderService {
 	 * @return
 	 */
 	public List<Order> getAllOrder();
+	
+	/**
+	 * 更新订单信息
+	 * @author wcy
+	 * @time 2017年4月30日下午6:01:46
+	 */
+	int update(Order order) throws Exception ;
 }

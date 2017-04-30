@@ -37,7 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<ul class="memenu skyblue">
 					  <li class="grid"><a  href="${pageContext.request.contextPath}">主页</a></li>	
 					 <c:forEach items="${categorys}" var="category" >
-				      	 <li class="grid"><a  href="${pageContext.request.contextPath}"> ${category.name}</a></li>	
+				      	 <li class="grid"><a  href="${pageContext.request.contextPath}/${category.id}"> ${category.name}</a></li>	
 					 </c:forEach>
 			  </ul> 
 			</div>
@@ -111,7 +111,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="content">
 	<div class="container">
 		<div class="content-top">
-			<h1>Recent Products</h1>
+			<h1>热销商品</h1>
 			<div class="content-top1">
 				<c:forEach var="product" items="${products}" varStatus="v">
 				<div class="col-md-3 col-md2">
@@ -122,7 +122,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<h3><a href="${pageContext.request.contextPath}/product/detail?id=${product.id}">${product.name}</a></h3>
 						<div class="price">
 								<h5 class="item_price">${product.price}</h5>
-								<a href="#" class="item_add">Add To Cart</a>
+								<a href="${pageContext.request.contextPath}/cart/add/${product.id}" class="item_add">Add To Cart</a>
 								<div class="clearfix"> </div>
 						</div>
 					</div>

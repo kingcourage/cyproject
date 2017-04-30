@@ -57,6 +57,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 
 						<label class="add-to item_price">${product.price}</label> <a href="#" onclick="buy()" class="cart item_add">购买</a>
+						<a href="${pageContext.request.contextPath}/cart/add/${product.id}"  class="cart item_add">加入购物车</a>
 					</div>
 				</div>
 				<!----->

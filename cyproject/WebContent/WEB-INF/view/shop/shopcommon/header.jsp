@@ -5,20 +5,6 @@
 	<div class="header-top">
 		<div class="container">
 		<div class="col-md-4 world">
-					<ul >
-						<li>
-						<select class="in-drop">
-							  <option>English</option>
-							  <option>Japanese</option>
-							  <option>French</option>
-							</select></li>
-						<li><select class="in-drop1">
-							  <option>Dollar</option>
-							  <option>Euro</option>
-							  <option>Yen</option>
-							</select>
-						</li>
-					</ul>
 				</div>
 				<div class="col-md-4 logo">
 					<a href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/public/cpts/images/logo.png" alt=""></a>	
@@ -30,10 +16,10 @@
 					<span>or</span><a  href="${pageContext.request.contextPath}/register">注册</a></p>
 			</c:if>
 			<c:if test="${CURRENT_USER != null}">
-				<p class="log"><a href="${pageContext.request.contextPath}/order/orderList"  >您好,${CURRENT_USER.username}</a>
+				<p class="log"><a href="${pageContext.request.contextPath}/user/shop/index"  >您好,${CURRENT_USER.username}</a>
 			</c:if>		
 					<div class="cart box_1">
-						<a href="checkout.html">
+						<a href="${pageContext.request.contextPath}/cart/index">
 						<h3> <div class="total">
 							<span class="simpleCart_total"></span></div>
 							<img src="${pageContext.request.contextPath}/public/cpts/images/cart.png" alt=""/></h3>

@@ -14,6 +14,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- start menu -->
 <script>$(document).ready(function(){$(".memenu").memenu();});</script>
+<script type="text/javascript">
+	function delcart(id){
+		$.ajax({
+			type:'post',
+			url:'${pageContext.request.contextPath}/cart/delete',
+			data:{
+				"id":id.
+			},
+			dataType:'json',
+			success:function(result){
+				if(result.code == 0){
+					alert("删除成功");
+				}
+			}
+		})
+	}
+</script>
 <!-- slide -->
 <%@include file="shopcommon/common.jsp"%>
 </head>
@@ -23,42 +40,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <%@include file="shopcommon/header.jsp"%>
 <!---->
 <div class="container">
-<div class="contact">
-			<div class="container">
-			<div class="row">
-				<div class="col-md-6"> <a href="${pageContext.request.contextPath}/user/shop/index"><h1>个人信息</h1></a></div>
-				<div class="col-md-6"> <h1>订单信息</h1></div>
-			</div>
-			</div>
-			</div>
 	<div class="check-out">
-		<h1>订单列表</h1>
-		<c:forEach var="order" items="${orders}" varStatus="o">
+		<h1>购物车</h1>
 			<table  class="table table-bordered">
-			<tr>订单编号：${order.orderNo}&nbsp;&nbsp;订单金额：${order.payment}</tr>
 		  <tr>
 			<th>商品</th>
-			<th>数量</th>		
+			<th>数量</th>
 			<th>价格</th>
-			<th>总价</th>
+			<th>操作</th>
 		  </tr>
-		 <c:forEach var="orderItem" items="${order.orderItemList}" varStatus="os">
+		 <c:forEach var="cart" items="${cartModels}" varStatus="ca">
 		 	 <tr>
-		  <td class="ring-in"><a href="${pageContext.request.contextPath}/product/detail?id=${orderItem.productId}" class="at-in"><img src="${pageContext.request.contextPath}/${orderItem.productImage}" class="img-responsive" alt=""></a>
+		  <td class="ring-in"><a href="${pageContext.request.contextPath}/product/detail?id=${cart.productId}" class="at-in"><img src="${pageContext.request.contextPath}/${cart.productImage}" class="img-responsive" alt=""></a>
 			<div class="sed">
-				<h5>${orderItem.productName}</h5>
+				<h5>${cart.productName}</h5>
 				<p> </p>
 			</div>
 			<div class="clearfix"> </div></td>
 			<td class="check"><input type="text" value="1" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}"></td>		
-			<td>${orderItem.currentUnitPrice}</td>
-			<td>$150.00</td>
+			<td>${cart.productPrice}</td>
+			<td><button class="btn btn-info" onclick="delcart(${cart.id})">删除</button></td>
 		  </tr>
 		 </c:forEach>
 	</table>
-	<a href="${pageContext.request.contextPath}/order/pay/${order.orderNo}" class=" to-buy">前往支付</a>
 	<div class="clearfix"> </div>
-		</c:forEach>
     </div>
 </div>
 <!--footer-->

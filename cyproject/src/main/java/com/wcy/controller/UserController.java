@@ -13,10 +13,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.alibaba.fastjson.JSONObject;
 import com.wcy.common.Result;
+import com.wcy.pojo.Shipping;
 import com.wcy.pojo.User;
+import com.wcy.service.ShippingService;
 import com.wcy.service.UserService;
+import com.wcy.util.CurrentUserUtil;
 
 @Controller
 @RequestMapping("/user")
@@ -24,6 +26,9 @@ public class UserController extends BaseController{
 	
 	@Resource
 	private UserService userService;
+	
+	@Resource
+	private ShippingService shippingService;
 	
 	/**
 	 * 用户注册
@@ -84,5 +89,23 @@ public class UserController extends BaseController{
 	@ResponseBody
 	public List<User> getAllUser(){
 		return userService.getAllUser();
+	}
+	
+	/**
+	 * 前台用户信息界面
+	 * @return
+	 * @throws Exception 
+	 */
+	@RequestMapping("/shop/index")
+	public String userIndexShop(HttpServletRequest request,HttpServletResponse response) throws Exception{
+		User user = CurrentUserUtil.getCurrentUser(request);
+		if (user == null) {
+			return "shop/account";
+		}
+		request.setAttribute("user",user);
+		List<Shipping> shippings = shippingService.getShipping(user.getId());
+		request.setAttribute("shippings",shippings);
+		
+		return "shop/user";
 	}
 }

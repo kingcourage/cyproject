@@ -7,7 +7,6 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.sun.tools.internal.jxc.ap.Const;
 import com.wcy.common.Dict;
 import com.wcy.dao.UserMapper;
 import com.wcy.pojo.User;

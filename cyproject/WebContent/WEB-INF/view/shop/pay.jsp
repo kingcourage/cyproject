@@ -9,7 +9,12 @@
 <%@include file="shopcommon/common.jsp" %>
 <body>
 <%@include file="shopcommon/header.jsp" %>
-<img  src="${pageContext.request.contextPath}/images/${qrimage}">
+<div class="row">
+<div class="col-md-4">请使用支付宝扫描二维码完成付款</div>
+<div class="col-md-4"><img  src="${pageContext.request.contextPath}/images/${qrimage}"></div>
+<div class="col-md-4"></div>
+</div>
+
 <%@include file="shopcommon/footer.jsp" %>
 </body>
 </html>

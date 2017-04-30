@@ -116,6 +116,8 @@ public class OrderController extends BaseController {
 			if (user != null) {
 				order.setUserId(user.getId());
 			}
+			//创建订单为未支付状态
+			order.setStatus(Dict.OrderStatusEnum.NO_PAY.getCode());
 			orderService.addOrder(order);
 			Order saveOrder = orderService.selectById(order.getId());
 			log.info("订单的编号为" + saveOrder.getOrderNo());
@@ -179,7 +181,14 @@ public class OrderController extends BaseController {
 		User user = CurrentUserUtil.getCurrentUser(request);
 		Integer userId = user.getId();
 		Order order = orderService.selectByUserIdAndOrderNo(userId, orderNo);
-
+		Order updateOrder = new Order();
+		
+		//不管成功与否都改变订单状态，仅用于测试
+		updateOrder.setId(order.getId());
+		updateOrder.setStatus(Dict.OrderStatusEnum.PAID.getCode());
+		
+		
+		orderService.update(order);
 		List<OrderItem> orderItemList = orderItemService.orderItemList(orderNo);
 
 		// (必填) 商户网站订单系统中唯一订单号，64个字符以内，只能包含字母、数字、下划线，
