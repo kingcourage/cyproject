@@ -47,7 +47,7 @@
 					</div>
 					
 					<div class="fitem">
-						<label>库存</label> <input type="file" name="image" >
+						<label>主图</label> <input type="file" name="image" >
 					</div>
 					
 				</form>

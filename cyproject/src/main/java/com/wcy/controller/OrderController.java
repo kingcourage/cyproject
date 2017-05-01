@@ -130,7 +130,11 @@ public class OrderController extends BaseController {
 			if (product != null) {
 				product = productService.getProductById(product);
 			}
-
+			Order updateOrder = new Order();
+			updateOrder.setId(order.getId());
+			updateOrder.setPayment(product.getPrice());
+			orderService.update(updateOrder);
+			
 			OrderItem orderItem = new OrderItem();
 			orderItem.setUserId(user.getId());
 			orderItem.setOrderNo(saveOrder.getOrderNo());
@@ -139,6 +143,7 @@ public class OrderController extends BaseController {
 			orderItem.setProductImage(product.getMainImage());
 			orderItem.setCurrentUnitPrice(product.getPrice());
 			orderItem.setTotalPrice(product.getPrice());
+			orderItem.setQuantity(1);
 			int count = orderItemService.addOrderItem(orderItem);
 			if (count > 0) {
 				result.setCode(Dict.ReturnCode.SUCCESS);
