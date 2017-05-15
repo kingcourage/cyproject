@@ -12,7 +12,9 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- start menu -->
-<script>$(document).ready(function(){$(".memenu").memenu();});</script>
+<script>$(document).ready(function(){$(".memenu").memenu();});
+</script>
+
 <!-- slide -->
 <%@include file="shopcommon/common.jsp"%>
 </head>
@@ -28,10 +30,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<form id="myform">
 
 					<span>用户名</span>
-					<input type="text" name="username">  
+					<input type="text" class="form-control" id="username" name="username" style="width:540px;">  
 				
 					<span>密码</span>
-					<input type="text" name="password"> 
+					<input type="password"  class="form-control" id="password" name="password"> 
 					<div class="word-in">
 				  		<a class="forgot" href="#">忘记密码?</a>
 				 		 <input type="button" class="btn btn-info" value="登录" onclick="login()">
@@ -40,7 +42,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			   </div>	
 			    <div class="col-md-6 login-left">
 			  	 <h4>新建账户</h4>
-				 <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+				 <p>创建账户代表您将遵循本网站的用户协议</p>
 				 <a class="acount-btn" href="${pageContext.request.contextPath}/register">创建账户</a>
 			   </div>
 			   <div class="clearfix"> </div>
@@ -64,7 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						  var layer = layui.layer;
 						  layer.msg('登录成功，正在跳转中。。。',{icon: 1,time:1000});
 						}); 
-					setTimeout("window.location.href='${pageContext.request.contextPath}'",1000);	  
+					setTimeout("window.location.href='${pageContext.request.contextPath}/'",1000);	  
 				}else{
 					layui.use('layer', function(){
 						  var layer = layui.layer;

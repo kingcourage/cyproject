@@ -85,6 +85,28 @@ public class UserController extends BaseController{
 		return "system/user";
 	}
 	
+	@RequestMapping(value="/system/login")
+	@ResponseBody
+	public Result<User> slogin(String username,String password,HttpServletRequest request,HttpServletResponse response){
+		if(StringUtils.isNotBlank(username)&&StringUtils.isNotBlank(password)){
+			try {
+				User user = userService.login(username, password);
+				if(user!=null){
+					result.setMsg("success");
+					HttpSession session = request.getSession();
+					session.setAttribute("CURRENT_USER",user);
+					
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}else{
+			result.setMsg("fail");
+		}
+		return result;
+	}
+	
 	@RequestMapping("/system/getAllUser")
 	@ResponseBody
 	public List<User> getAllUser(){

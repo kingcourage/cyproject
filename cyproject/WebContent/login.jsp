@@ -73,7 +73,7 @@
 			$
 					.ajax({
 						type : "post",
-						url : "${pageContext.request.contextPath}/admin/login",
+						url : "${pageContext.request.contextPath}/user/system/login",
 						data : $("#theform").serialize(),
 						dataType : "json",
 						success : function(result) {

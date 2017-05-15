@@ -37,6 +37,18 @@ public class IndexController{
 		return "shop/index";
 	}
 	
+	@RequestMapping("/search")
+	public String search(HttpServletResponse response,HttpServletRequest request) throws Exception{
+		//获取分类信息
+		List<Category> categoryList = categorytService.getCategoryByParentid(0);
+		request.setAttribute("categorys",categoryList);
+		//获取商品信息
+		String searchText = request.getParameter("searchText");
+		List<Product> productlist = new ArrayList();
+		productlist = productService.getByNameAndCategoryIds("%"+searchText+"%", null);
+		request.setAttribute("products",productlist);
+		return "shop/index";
+	}
 	
 	@RequestMapping("/{categoryId}")
 	public String index(@PathVariable Integer categoryId,HttpServletResponse response,HttpServletRequest request) throws Exception{

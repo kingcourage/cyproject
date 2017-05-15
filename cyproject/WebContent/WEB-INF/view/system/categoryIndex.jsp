@@ -18,6 +18,8 @@
 					<tr>
 						<th field="name" width="50">商品名称</th>
 						<th field="subtitle" width="50">副标题</th>
+						<th field="mainImage" width="80"
+					data-options="formatter:function(v){return '<img  src='+'${pageContext.request.contextPath}\/'+v+'/>'}"><strong>image</strong></th>
 						<th field="price" width="价格">价格</th>
 						<th field="stock" width="库存">库存</th>
 					</tr>
@@ -44,8 +46,7 @@
 					<div class="fitem">
 						<label>库存</label> <input name="stock" class="easyui-validatebox">
 						<input type="hidden" name="categoryId" id="categoryId2">
-					</div>
-					
+					</div>					
 					<div class="fitem">
 						<label>主图</label> <input type="file" name="image" >
 					</div>
