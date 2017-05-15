@@ -35,7 +35,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 		  <div class="col-md-8 h_menu4">
 				<ul class="memenu skyblue">
-					  <li class="grid"><a  href="${pageContext.request.contextPath}">主页</a></li>	
+					  <li class="grid"><a  href="${pageContext.request.contextPath}/">主页</a></li>	
 					 <c:forEach items="${categorys}" var="category" >
 				      	 <li class="grid"><a  href="${pageContext.request.contextPath}/${category.id}"> ${category.name}</a></li>	
 					 </c:forEach>

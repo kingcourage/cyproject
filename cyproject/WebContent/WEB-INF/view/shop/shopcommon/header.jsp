@@ -7,7 +7,7 @@
 		<div class="col-md-4 world">
 				</div>
 				<div class="col-md-4 logo">
-					<a href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/public/cpts/images/logo.png" alt=""></a>	
+					<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/public/cpts/images/logo.png" alt=""></a>	
 				</div>
 		
 			<div class="col-md-4 header-left">
