@@ -58,8 +58,8 @@ public class ProductController extends BaseController{
 	@ResponseBody
 	public Result<Product> saveProduct(Product product,@RequestParam("image") CommonsMultipartFile file,HttpServletRequest request,HttpServletResponse response){
 		try {
-			String basepath = "H:/Users/wcy/git/cyproject/cyproject/WebContent/";
-			//String basepath = request.getSession().getServletContext().getRealPath("/");
+			//String basepath = "H:/Users/wcy/git/cyproject/cyproject/WebContent/";
+			String basepath = request.getSession().getServletContext().getRealPath("/");
 			System.out.println(basepath);
 			String path="upload/"+new Date().getTime()+file.getOriginalFilename();
 			File newFile=new File(basepath+path);
