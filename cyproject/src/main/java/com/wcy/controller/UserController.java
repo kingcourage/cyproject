@@ -75,7 +75,6 @@ public class UserController extends BaseController{
 		return result;
 	}
 	
-	
 	/**
 	 * 后台用户管理界面
 	 * @return

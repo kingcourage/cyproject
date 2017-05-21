@@ -44,12 +44,14 @@ public class CartController extends BaseController {
 			Product product = new Product();
 			product.setId(cart.getProductId());
 			product = productService.getProductById(product);
-			CartModel cartModel = new CartModel();
-			BeanUtils.copyProperties(cart, cartModel);
-			cartModel.setProductName(product.getName());
-			cartModel.setProductImage(product.getMainImage());
-			cartModel.setProductPrice(product.getPrice());
-			cartModels.add(cartModel);
+			if(product!=null){
+				CartModel cartModel = new CartModel();
+				BeanUtils.copyProperties(cart, cartModel);
+				cartModel.setProductName(product.getName());
+				cartModel.setProductImage(product.getMainImage());
+				cartModel.setProductPrice(product.getPrice());
+				cartModels.add(cartModel);
+			}
 		}
 		request.setAttribute("cartModels",cartModels);
 		return "shop/cart";

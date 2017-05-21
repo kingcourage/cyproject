@@ -6,6 +6,7 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -76,6 +77,13 @@ public class IndexController{
 	
 	@RequestMapping("/login")
 	public String login(){
+		return "shop/account";
+	}
+	
+	@RequestMapping(value="/logout")
+	public String logout(HttpServletRequest request){
+		HttpSession session = request.getSession();
+		session.removeAttribute("CURRENT_USER");
 		return "shop/account";
 	}
 	
